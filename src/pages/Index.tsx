@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/contexts/ThemeContext";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import VideoLibrary from "@/components/VideoLibrary";
@@ -7,14 +8,16 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <HeroSection />
-      <VideoLibrary />
-      <MeditationMusic />
-      <WellnessTips />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen smooth-scroll">
+        <Navigation />
+        <HeroSection />
+        <VideoLibrary />
+        <MeditationMusic />
+        <WellnessTips />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 };
 

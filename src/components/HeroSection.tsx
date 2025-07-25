@@ -3,57 +3,75 @@ import { Play, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-yoga.jpg";
 
 const HeroSection = () => {
+  const scrollToVideos = () => {
+    const element = document.getElementById('videos');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 pt-20">
-      {/* Background Image with Blur */}
+    <section id="home" className="relative min-h-screen flex items-center justify-center content-padding pt-24 section-spacing">
+      {/* Background Image with Enhanced Blur */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-30"
+        className="absolute inset-0 bg-cover bg-center opacity-20"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
-      <div className="absolute inset-0 backdrop-blur-sm" />
+      <div className="absolute inset-0 backdrop-blur-md" />
       
       {/* Hero Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto">
-        <div className="glass rounded-3xl p-8 md:p-12 mb-8">
-          <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-6">
-            <Sparkles className="h-4 w-4 text-accent-aqua" />
-            <span className="text-sm font-medium text-text-secondary">Your Journey to Inner Peace</span>
+      <div className="relative z-10 text-center max-w-5xl mx-auto">
+        <div className="glass rounded-3xl p-12 md:p-16 mb-12 float-animation glass-hover">
+          <div className="inline-flex items-center gap-2 glass rounded-full px-6 py-3 mb-8">
+            <Sparkles className="h-5 w-5 text-accent-aqua breathing-pulse" />
+            <span className="text-sm font-medium text-text-secondary tracking-wide">Your Journey to Pure Wellness</span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight tracking-tight">
             <span className="text-gradient">Transform</span> Your Mind,{" "}
+            <br className="hidden md:block" />
             <span className="text-gradient">Strengthen</span> Your Body
           </h1>
           
-          <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-text-secondary mb-12 max-w-3xl mx-auto leading-relaxed">
             Discover the perfect harmony of yoga and meditation with our curated collection 
             of guided sessions, peaceful music, and wellness wisdom.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="coral" size="lg" className="w-full sm:w-auto">
-              <Play className="h-5 w-5 mr-2" />
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button 
+              variant="coral" 
+              size="lg" 
+              className="w-full sm:w-auto px-8 py-4 text-lg glass-hover"
+              onClick={scrollToVideos}
+            >
+              <Play className="h-6 w-6 mr-3" />
               Start Your Practice
             </Button>
-            <Button variant="glass-glow" size="lg" className="w-full sm:w-auto">
+            <Button 
+              variant="glass-glow" 
+              size="lg" 
+              className="w-full sm:w-auto px-8 py-4 text-lg glass-hover"
+              onClick={scrollToVideos}
+            >
               Explore Content
             </Button>
           </div>
         </div>
         
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 max-w-md mx-auto">
-          <div className="glass rounded-2xl p-4 text-center glass-hover">
-            <div className="text-2xl font-bold text-accent-aqua">100+</div>
-            <div className="text-sm text-text-muted">Yoga Videos</div>
+        {/* Enhanced Stats */}
+        <div className="grid grid-cols-3 gap-6 max-w-xl mx-auto">
+          <div className="glass rounded-3xl p-6 text-center glass-hover breathing-pulse">
+            <div className="text-3xl font-bold text-accent-aqua mb-2">70+</div>
+            <div className="text-sm text-text-muted font-medium">Yoga Videos</div>
           </div>
-          <div className="glass rounded-2xl p-4 text-center glass-hover">
-            <div className="text-2xl font-bold text-accent-lavender">50+</div>
-            <div className="text-sm text-text-muted">Meditations</div>
+          <div className="glass rounded-3xl p-6 text-center glass-hover breathing-pulse">
+            <div className="text-3xl font-bold text-accent-lavender mb-2">50+</div>
+            <div className="text-sm text-text-muted font-medium">Meditations</div>
           </div>
-          <div className="glass rounded-2xl p-4 text-center glass-hover">
-            <div className="text-2xl font-bold text-accent-coral">24/7</div>
-            <div className="text-sm text-text-muted">Support</div>
+          <div className="glass rounded-3xl p-6 text-center glass-hover breathing-pulse">
+            <div className="text-3xl font-bold text-accent-coral mb-2">24/7</div>
+            <div className="text-sm text-text-muted font-medium">Support</div>
           </div>
         </div>
       </div>
