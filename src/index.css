@@ -2,39 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Serene Glassmorphic Yoga & Meditation Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Main background gradient - aqua to lavender */
+    --background: 189 41% 97%;
+    --background-secondary: 267 100% 96%;
+    --foreground: 240 23% 23%;
 
+    /* Glass panels - white with transparency */
+    --glass: 0 0% 100%;
+    --glass-border: 0 0% 100%;
+    --glass-glow: 188 65% 81%;
+    --glass-glow-secondary: 267 100% 85%;
+
+    /* Text colors */
+    --text-primary: 240 23% 23%;
+    --text-secondary: 240 14% 32%;
+    --text-muted: 240 8% 55%;
+
+    /* Accent colors */
+    --accent-coral: 11 100% 77%;
+    --accent-gold: 44 94% 74%;
+    --accent-aqua: 188 65% 72%;
+    --accent-lavender: 267 100% 78%;
+
+    /* Component colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 240 23% 23%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    --popover-foreground: 240 23% 23%;
+    --primary: 188 65% 72%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 240 23% 23%;
+    --muted: 267 100% 96%;
+    --muted-foreground: 240 8% 55%;
+    --accent: 11 100% 77%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
+    --ring: 188 65% 72%;
 
     --radius: 0.5rem;
 
@@ -100,6 +111,56 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--background-secondary)) 100%);
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Glassmorphic utilities */
+@layer utilities {
+  .glass {
+    background: hsla(var(--glass) / 0.5);
+    backdrop-filter: blur(32px);
+    border: 1px solid hsla(var(--glass-border) / 0.2);
+    box-shadow: 
+      0 8px 32px hsla(var(--text-primary) / 0.1),
+      inset 0 1px 0 hsla(var(--glass-border) / 0.3);
+  }
+
+  .glass-glow {
+    box-shadow: 
+      0 8px 32px hsla(var(--text-primary) / 0.1),
+      0 0 24px hsla(var(--glass-glow) / 0.3),
+      inset 0 1px 0 hsla(var(--glass-border) / 0.3);
+  }
+
+  .glass-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+      0 16px 48px hsla(var(--text-primary) / 0.15),
+      0 0 32px hsla(var(--glass-glow) / 0.4),
+      inset 0 1px 0 hsla(var(--glass-border) / 0.4);
+  }
+
+  .breathing-pulse {
+    animation: breathe 4s ease-in-out infinite;
+  }
+
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--accent-aqua)), hsl(var(--accent-lavender)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

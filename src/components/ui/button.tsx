@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -18,6 +18,10 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        glass: "glass glass-hover text-text-primary font-semibold",
+        "glass-glow": "glass glass-glow glass-hover text-text-primary font-semibold",
+        coral: "bg-accent-coral text-white hover:bg-accent-coral/90 shadow-lg hover:shadow-xl hover:shadow-accent-coral/20 transform hover:scale-105",
+        aqua: "bg-accent-aqua text-white hover:bg-accent-aqua/90 shadow-lg hover:shadow-xl hover:shadow-accent-aqua/20 transform hover:scale-105",
       },
       size: {
         default: "h-10 px-4 py-2",

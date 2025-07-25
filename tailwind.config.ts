@@ -23,7 +23,19 @@ export default {
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
+				'background-secondary': 'hsl(var(--background-secondary))',
 				foreground: 'hsl(var(--foreground))',
+				glass: {
+					DEFAULT: 'hsl(var(--glass))',
+					border: 'hsl(var(--glass-border))',
+					glow: 'hsl(var(--glass-glow))',
+					'glow-secondary': 'hsl(var(--glass-glow-secondary))',
+				},
+				text: {
+					primary: 'hsl(var(--text-primary))',
+					secondary: 'hsl(var(--text-secondary))',
+					muted: 'hsl(var(--text-muted))',
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -42,7 +54,11 @@ export default {
 				},
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					foreground: 'hsl(var(--accent-foreground))',
+					coral: 'hsl(var(--accent-coral))',
+					gold: 'hsl(var(--accent-gold))',
+					aqua: 'hsl(var(--accent-aqua))',
+					lavender: 'hsl(var(--accent-lavender))',
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
