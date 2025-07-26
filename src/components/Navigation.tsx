@@ -13,25 +13,27 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-5xl content-padding">
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-40 w-full max-w-6xl content-padding">
       <div className="glass rounded-3xl px-8 py-4 flex items-center justify-between glass-hover h-16">
-        {/* Logo */}
+        {/* Logo with enhanced design */}
         <div className="flex items-center space-x-3">
           <div className="relative">
-            <Leaf className="h-7 w-7 text-accent-aqua" />
-            <div className="absolute inset-0 h-7 w-7 text-accent-lavender opacity-60 transform rotate-12">
-              <Leaf className="h-7 w-7" />
+            <div className="w-10 h-10 rounded-full glass-glow flex items-center justify-center">
+              <Leaf className="h-6 w-6 text-accent-aqua" />
+              <div className="absolute inset-0 w-10 h-10 text-accent-lavender opacity-40 transform rotate-12 flex items-center justify-center">
+                <Leaf className="h-6 w-6" />
+              </div>
             </div>
           </div>
-          <span className="font-bold text-xl text-gradient tracking-wide">PureYoga</span>
+          <span className="font-bold text-2xl text-gradient tracking-wide">PureYoga</span>
         </div>
         
-        {/* Navigation Links */}
-        <div className="hidden md:flex items-center space-x-6">
+        {/* Navigation Links with enhanced spacing */}
+        <div className="hidden md:flex items-center space-x-8">
           <Button 
             variant="ghost" 
             size="sm" 
-            className="rounded-2xl px-6 py-2 text-text-primary hover:text-accent-aqua transition-colors"
+            className="rounded-2xl px-6 py-3 text-text-primary hover:text-accent-aqua transition-all duration-300 ripple hover:glass-glow"
             onClick={() => scrollToSection('home')}
           >
             Home
@@ -39,7 +41,7 @@ const Navigation = () => {
           <Button 
             variant="ghost" 
             size="sm" 
-            className="rounded-2xl px-6 py-2 text-text-primary hover:text-accent-aqua transition-colors"
+            className="rounded-2xl px-6 py-3 text-text-primary hover:text-accent-aqua transition-all duration-300 ripple hover:glass-glow"
             onClick={() => scrollToSection('videos')}
           >
             Videos
@@ -47,7 +49,7 @@ const Navigation = () => {
           <Button 
             variant="ghost" 
             size="sm" 
-            className="rounded-2xl px-6 py-2 text-text-primary hover:text-accent-aqua transition-colors"
+            className="rounded-2xl px-6 py-3 text-text-primary hover:text-accent-aqua transition-all duration-300 ripple hover:glass-glow"
             onClick={() => scrollToSection('music')}
           >
             Music
@@ -55,20 +57,20 @@ const Navigation = () => {
           <Button 
             variant="ghost" 
             size="sm" 
-            className="rounded-2xl px-6 py-2 text-text-primary hover:text-accent-aqua transition-colors"
+            className="rounded-2xl px-6 py-3 text-text-primary hover:text-accent-aqua transition-all duration-300 ripple hover:glass-glow"
             onClick={() => scrollToSection('tips')}
           >
             Tips
           </Button>
         </div>
 
-        {/* Theme Toggle & Get Started */}
+        {/* Enhanced Theme Toggle & Get Started */}
         <div className="flex items-center space-x-4">
           <Button
             variant="glass"
             size="icon"
             onClick={toggleTheme}
-            className="rounded-full w-12 h-12 glass-hover"
+            className="rounded-full w-12 h-12 glass-hover ripple"
           >
             {theme === 'dark' ? (
               <Sun className="h-5 w-5 text-accent-gold" />
@@ -80,7 +82,7 @@ const Navigation = () => {
           <Button 
             variant="coral" 
             size="sm" 
-            className="hidden sm:flex px-6 py-2 rounded-2xl"
+            className="hidden sm:flex px-8 py-3 rounded-2xl ripple breathing-pulse"
             onClick={() => scrollToSection('home')}
           >
             Get Started
