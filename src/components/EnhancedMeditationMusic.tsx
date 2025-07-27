@@ -9,56 +9,84 @@ const ambientSounds = [
     title: "Ocean Waves",
     icon: Waves,
     color: "text-accent-aqua",
-    url: "https://www.soundjay.com/misc/sounds/rain-01.wav" // You'll replace with actual hosted files
+    url: "https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-one/water_waves_ocean_gentle_lapping_loop_001.mp3"
   },
   {
     id: 2,
     title: "Forest Breeze",
     icon: Wind,
     color: "text-accent-lavender",
-    url: "https://www.soundjay.com/misc/sounds/rain-01.wav"
+    url: "https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-one/nature_forest_wind_light_breeze_through_trees_loop_001.mp3"
   },
   {
     id: 3,
     title: "Mountain Stream",
     icon: Mountain,
     color: "text-accent-coral",
-    url: "https://www.soundjay.com/misc/sounds/rain-01.wav"
+    url: "https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-one/water_stream_small_flowing_loop_001.mp3"
   },
   {
     id: 4,
     title: "Pine Forest",
     icon: TreePine,
     color: "text-accent-aqua",
-    url: "https://www.soundjay.com/misc/sounds/rain-01.wav"
+    url: "https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-one/nature_forest_birds_chirping_loop_001.mp3"
   },
   {
     id: 5,
     title: "Gentle Rain",
     icon: CloudRain,
     color: "text-accent-lavender",
-    url: "https://www.soundjay.com/misc/sounds/rain-01.wav"
+    url: "https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-one/weather_rain_light_on_leaves_loop_001.mp3"
   },
   {
     id: 6,
     title: "Crackling Fire",
     icon: Flame,
     color: "text-accent-coral",
-    url: "https://www.soundjay.com/misc/sounds/rain-01.wav"
+    url: "https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-one/fire_fireplace_crackling_loop_001.mp3"
   },
   {
     id: 7,
     title: "Coffee Shop",
     icon: Coffee,
     color: "text-accent-aqua",
-    url: "https://www.soundjay.com/misc/sounds/rain-01.wav"
+    url: "https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-one/ambience_cafe_chatter_background_loop_001.mp3"
   },
   {
     id: 8,
     title: "Thunder Storm",
     icon: Zap,
     color: "text-accent-lavender",
-    url: "https://www.soundjay.com/misc/sounds/rain-01.wav"
+    url: "https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-one/weather_thunder_distant_rumble_loop_001.mp3"
+  },
+  {
+    id: 9,
+    title: "Bamboo Forest",
+    icon: TreePine,
+    color: "text-accent-coral",
+    url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav"
+  },
+  {
+    id: 10,
+    title: "Night Crickets",
+    icon: Mountain,
+    color: "text-accent-aqua",
+    url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav"
+  },
+  {
+    id: 11,
+    title: "Tibetan Bowls",
+    icon: Waves,
+    color: "text-accent-lavender",
+    url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav"
+  },
+  {
+    id: 12,
+    title: "Wind Chimes",
+    icon: Wind,
+    color: "text-accent-coral",
+    url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav"
   }
 ];
 

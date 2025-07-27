@@ -176,13 +176,13 @@
 
   /* Enhanced Glass Effects */
   .glass {
-    background: hsla(var(--glass) / 0.12);
+    background: hsla(var(--glass) / 0.15);
     backdrop-filter: blur(40px);
-    border: 1px solid hsla(var(--glass-border) / 0.08);
+    border: 1px solid hsla(var(--glass-border) / 0.12);
     box-shadow: 
       0 8px 32px hsla(0 0% 0% / 0.3),
-      0 0 16px hsla(var(--glass-glow) / 0.15),
-      inset 0 1px 0 hsla(var(--glass-border) / 0.1);
+      0 0 16px hsla(var(--glass-glow) / 0.25),
+      inset 0 1px 0 hsla(var(--glass-border) / 0.15);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -368,5 +368,48 @@
     box-shadow: 
       0 20px 40px hsla(0 0% 0% / 0.3),
       0 0 20px hsla(var(--glass-glow) / 0.2);
+  }
+
+  /* Parallax Effects */
+  .parallax-slow {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .parallax-medium {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .parallax-fast {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Floating Elements */
+  .floating-element {
+    animation: float-gentle 6s ease-in-out infinite;
+  }
+
+  .floating-element-delayed {
+    animation: float-gentle 6s ease-in-out infinite 2s;
+  }
+
+  @keyframes float-gentle {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-15px) rotate(1deg); }
+    66% { transform: translateY(-5px) rotate(-1deg); }
+  }
+
+  /* Enhanced Glassmorphism */
+  .glass-intense {
+    background: hsla(var(--glass) / 0.2);
+    backdrop-filter: blur(60px);
+    border: 1px solid hsla(var(--glass-glow) / 0.3);
+    box-shadow: 
+      0 12px 40px hsla(0 0% 0% / 0.4),
+      0 0 32px hsla(var(--glass-glow) / 0.3),
+      0 0 16px hsla(var(--glass-glow-secondary) / 0.2),
+      inset 0 1px 0 hsla(var(--glass-border) / 0.2);
   }
 }
