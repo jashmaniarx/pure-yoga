@@ -1,3 +1,3 @@
 
-[https://pure-yoga.jashmaniar.app/](https://pure-yoga.lovable.app/)
+[https://pure-yoga.jashmaniar.app/](pure-yoga.vercel.app)
 
