@@ -2,7 +2,7 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import VideoLibrary from "@/components/VideoLibrary";
-import MeditationMusic from "@/components/MeditationMusic";
+import EnhancedMeditationMusic from "@/components/EnhancedMeditationMusic";
 import WellnessTips from "@/components/WellnessTips";
 import Footer from "@/components/Footer";
 
@@ -13,7 +13,7 @@ const Index = () => {
         <Navigation />
         <HeroSection />
         <VideoLibrary />
-        <MeditationMusic />
+        <EnhancedMeditationMusic />
         <WellnessTips />
         <Footer />
       </div>

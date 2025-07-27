@@ -1,61 +1,197 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Leaf, Sun, Moon, Apple, Dumbbell, Brain, ArrowRight } from "lucide-react";
+import EnhancedTipsModal from "./EnhancedTipsModal";
 
-const tips = [
+const wellnessTips = [
   {
     id: 1,
     title: "Morning Ritual",
-    description: "Start your day with 5 minutes of deep breathing and intention setting",
     icon: Sun,
-    color: "text-accent-gold",
-    category: "Morning"
+    color: "text-accent-coral",
+    content: "Transform your mornings into a powerful foundation for daily wellness. Your morning ritual sets the energetic tone for everything that follows.",
+    benefits: [
+      "Increased sustained energy throughout the day",
+      "Enhanced emotional resilience and mood stability", 
+      "Improved focus and mental clarity",
+      "Reduced cortisol levels and stress response",
+      "Greater sense of purpose and intentionality"
+    ],
+    steps: [
+      "Wake up 30-45 minutes earlier to avoid rushing",
+      "Begin with 5-10 minutes of gratitude meditation or journaling",
+      "Hydrate with warm lemon water to kickstart metabolism",
+      "Practice 10-15 minutes of gentle yoga or stretching",
+      "Set 3 clear intentions for the day ahead",
+      "Enjoy a nourishing breakfast mindfully without distractions",
+      "Review your priorities and visualize success"
+    ]
   },
   {
     id: 2,
-    title: "Mindful Eating",
-    description: "Practice gratitude before meals and eat slowly to enhance digestion",
-    icon: Apple,
-    color: "text-accent-coral",
-    category: "Nutrition"
+    title: "Sleep Sanctuary",
+    icon: Moon,
+    color: "text-accent-lavender",
+    content: "Create a sleep environment and routine that promotes deep, restorative rest. Quality sleep is the foundation of physical and mental health.",
+    benefits: [
+      "Dramatically improved sleep quality and duration",
+      "Enhanced physical recovery and cellular repair",
+      "Strengthened immune system function",
+      "Better memory consolidation and cognitive performance",
+      "Improved emotional regulation and mental health"
+    ],
+    steps: [
+      "Maintain consistent sleep/wake times, even on weekends",
+      "Create a cool (65-68°F), completely dark environment",
+      "Remove all electronic devices from the bedroom",
+      "Practice progressive muscle relaxation or meditation",
+      "Use blackout curtains and consider a white noise machine",
+      "Keep a bedside journal for worries or tomorrow's tasks",
+      "Avoid caffeine after 2 PM and large meals 3 hours before bed"
+    ]
   },
   {
     id: 3,
-    title: "Evening Wind-Down",
-    description: "Create a calming routine with gentle stretches and herbal tea",
-    icon: Moon,
-    color: "text-accent-lavender",
-    category: "Evening"
+    title: "Breathwork Mastery",
+    icon: Brain,
+    color: "text-accent-aqua",
+    content: "Master advanced breathing techniques to regulate your nervous system, enhance mental clarity, and access deeper states of consciousness.",
+    benefits: [
+      "Significant reduction in anxiety and stress responses",
+      "Enhanced focus, concentration, and mental performance",
+      "Improved emotional regulation and self-control",
+      "Increased energy and vitality",
+      "Better sleep quality and faster recovery"
+    ],
+    steps: [
+      "Learn the 4-7-8 technique: Inhale for 4, hold for 7, exhale for 8",
+      "Practice box breathing: 4 counts in, hold 4, out 4, hold 4",
+      "Try the Wim Hof method for energy and cold tolerance",
+      "Use alternate nostril breathing for balance and focus",
+      "Practice breathwork for 10-20 minutes daily",
+      "Integrate micro-breathing sessions during stressful moments",
+      "Track your progress and notice subtle changes in wellbeing"
+    ]
   },
   {
     id: 4,
-    title: "Gentle Movement",
-    description: "Incorporate 10-minute movement breaks throughout your day",
-    icon: Dumbbell,
-    color: "text-accent-aqua",
-    category: "Exercise"
+    title: "Intuitive Eating",
+    icon: Apple,
+    color: "text-accent-coral",
+    content: "Develop a harmonious relationship with food through mindfulness, intuition, and deep nutritional wisdom for optimal health.",
+    benefits: [
+      "Improved digestion and nutrient absorption",
+      "Natural weight regulation without dieting",
+      "Reduced emotional and stress eating patterns",
+      "Enhanced energy levels and mental clarity",
+      "Greater appreciation and joy around food"
+    ],
+    steps: [
+      "Eat in a calm, distraction-free environment",
+      "Chew each bite 25-30 times to aid digestion",
+      "Notice hunger and fullness cues throughout meals",
+      "Choose foods that nourish both body and soul",
+      "Practice the 80% rule - stop when 80% full",
+      "Express gratitude before and after meals",
+      "Listen to your body's wisdom about what it needs"
+    ]
   },
   {
     id: 5,
-    title: "Nature Connection",
-    description: "Spend at least 15 minutes outdoors daily to ground yourself",
-    icon: Leaf,
-    color: "text-accent-aqua",
-    category: "Nature"
+    title: "Joyful Movement",
+    icon: Dumbbell,
+    color: "text-accent-lavender",
+    content: "Discover movement practices that bring joy, strength, and vitality to your body while honoring your unique needs and limitations.",
+    benefits: [
+      "Increased strength, flexibility, and endurance",
+      "Enhanced mood through endorphin release",
+      "Better posture and reduced chronic pain",
+      "Improved cardiovascular and bone health",
+      "Greater body awareness and self-confidence"
+    ],
+    steps: [
+      "Find movement you genuinely enjoy and look forward to",
+      "Start with 10-15 minutes daily and gradually increase",
+      "Incorporate strength, cardio, flexibility, and balance",
+      "Take active breaks every 60-90 minutes during work",
+      "Practice yoga or stretching before bed",
+      "Walk in nature whenever possible for added benefits",
+      "Listen to your body and rest when needed"
+    ]
   },
   {
     id: 6,
-    title: "Mental Clarity",
-    description: "Practice the 4-7-8 breathing technique to calm your nervous system",
+    title: "Digital Wellness",
+    icon: Leaf,
+    color: "text-accent-aqua",
+    content: "Create intentional boundaries with technology to reclaim your attention, reduce stress, and cultivate deeper connections with yourself and others.",
+    benefits: [
+      "Reduced stress, anxiety, and digital overwhelm",
+      "Improved sleep quality and circadian rhythm",
+      "Enhanced real-world relationships and connections",
+      "Increased creativity and problem-solving abilities",
+      "Greater presence and mindfulness in daily life"
+    ],
+    steps: [
+      "Create tech-free zones in bedroom and dining areas",
+      "Use app timers to limit social media and entertainment",
+      "Practice the 20-20-20 rule for eye health during screen time",
+      "Schedule specific times for email and social media",
+      "Turn on 'Do Not Disturb' during focused work or rest",
+      "Engage in offline hobbies that bring you joy",
+      "Have regular digital detox days or weekends"
+    ]
+  },
+  {
+    id: 7,
+    title: "Stress Alchemy",
     icon: Brain,
+    color: "text-accent-coral",
+    content: "Transform your relationship with stress by learning to use it as fuel for growth while developing resilience and emotional intelligence.",
+    benefits: [
+      "Improved stress resilience and emotional regulation",
+      "Enhanced problem-solving and adaptability",
+      "Reduced physical symptoms of chronic stress",
+      "Greater sense of control and empowerment",
+      "Improved relationships through better communication"
+    ],
+    steps: [
+      "Identify your personal stress triggers and patterns",
+      "Practice the STOP technique: Stop, Take a breath, Observe, Proceed",
+      "Reframe stressful situations as growth opportunities",
+      "Develop a toolkit of quick stress-relief techniques",
+      "Build regular stress-management practices into your routine",
+      "Seek support from friends, family, or professionals when needed",
+      "Celebrate small wins and acknowledge your progress"
+    ]
+  },
+  {
+    id: 8,
+    title: "Energy Management",
+    icon: Dumbbell,
     color: "text-accent-lavender",
-    category: "Mental Health"
+    content: "Master the art of managing your physical, mental, and emotional energy to optimize performance while maintaining sustainable wellbeing.",
+    benefits: [
+      "Consistent energy levels throughout the day",
+      "Improved productivity and focus",
+      "Better work-life balance and boundaries",
+      "Reduced burnout and exhaustion",
+      "Enhanced overall life satisfaction"
+    ],
+    steps: [
+      "Track your natural energy patterns throughout the day",
+      "Schedule demanding tasks during your peak energy hours",
+      "Take regular breaks to prevent energy depletion",
+      "Align your activities with your energy levels",
+      "Practice energy-giving activities like nature walks",
+      "Set clear boundaries to protect your energy",
+      "Regularly assess and adjust your commitments"
+    ]
   }
 ];
 
 const WellnessTips = () => {
   const [selectedTip, setSelectedTip] = useState<any>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const tipDetails: { [key: string]: any } = {
     "Morning Rituals": {
@@ -264,7 +400,6 @@ const WellnessTips = () => {
     const tipDetail = tipDetails[tipTitle];
     if (tipDetail) {
       setSelectedTip(tipDetail);
-      setIsModalOpen(true);
     }
   };
   return (
@@ -279,36 +414,33 @@ const WellnessTips = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {tips.map((tip) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+          {wellnessTips.map((tip) => {
             const Icon = tip.icon;
             
             return (
               <div
                 key={tip.id}
-                className="glass rounded-3xl p-6 glass-hover group"
+                className="glass rounded-3xl p-6 text-center glass-hover transition-all duration-500 ripple"
               >
-                <div className="flex items-start gap-4">
-                  <div className={`glass rounded-2xl p-3 ${tip.color} flex-shrink-0`}>
-                    <Icon className="h-6 w-6" />
+                <div className="mb-6">
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full glass mb-4 ${tip.color}`}>
+                    <Icon className="h-8 w-8" />
                   </div>
+                  <h3 className="font-bold text-lg text-text-primary mb-2">{tip.title}</h3>
+                  <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                    {tip.content}
+                  </p>
                   
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-xs font-medium text-text-muted uppercase tracking-wider">
-                        {tip.category}
-                      </span>
-                      <ArrowRight className="h-4 w-4 text-text-muted opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </div>
-                    
-                    <h3 className="font-bold text-lg text-text-primary mb-2">
-                      {tip.title}
-                    </h3>
-                    
-                    <p className="text-text-secondary text-sm leading-relaxed">
-                      {tip.description}
-                    </p>
-                  </div>
+                  <Button 
+                    variant="glass" 
+                    size="sm" 
+                    className="w-full"
+                    onClick={() => setSelectedTip(tip)}
+                  >
+                    Learn More
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
                 </div>
               </div>
             );
@@ -350,6 +482,13 @@ const WellnessTips = () => {
           </div>
         </div>
       </div>
+
+      {/* Enhanced Tips Modal */}
+      <EnhancedTipsModal 
+        isOpen={!!selectedTip} 
+        onClose={() => setSelectedTip(null)} 
+        tip={selectedTip} 
+      />
     </section>
   );
 };

@@ -34,8 +34,8 @@ const HeroSection = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-text-secondary mb-12 max-w-3xl mx-auto leading-relaxed">
-            Discover the perfect harmony of yoga and meditation with our curated collection 
-            of guided sessions, peaceful music, and wellness wisdom.
+            PureYoga exists to help you genuinely feel better—physically, mentally, and spiritually. 
+            This isn't just another wellness site; it's your companion for real transformation and healing.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -70,8 +70,8 @@ const HeroSection = () => {
             <div className="text-sm text-text-muted font-medium">Meditations</div>
           </div>
           <div className="glass rounded-3xl p-6 text-center glass-hover breathing-pulse">
-            <div className="text-3xl font-bold text-accent-coral mb-2">24/7</div>
-            <div className="text-sm text-text-muted font-medium">Support</div>
+            <div className="text-3xl font-bold text-accent-coral mb-2">∞</div>
+            <div className="text-sm text-text-muted font-medium">Wellness</div>
           </div>
         </div>
       </div>

@@ -169,27 +169,9 @@
     background: hsla(var(--glass-glow) / 0.6);
   }
 
-  /* Custom cursor */
+  /* System cursor - clean default */
   * {
-    cursor: none;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    width: 16px;
-    height: 16px;
-    border: 2px solid hsl(var(--accent-aqua));
-    border-radius: 50%;
-    background: hsla(var(--glass-glow) / 0.3);
-    backdrop-filter: blur(10px);
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: screen;
-    transition: transform 0.1s ease, scale 0.1s ease;
-    left: var(--mouse-x, 0);
-    top: var(--mouse-y, 0);
-    transform: translate(-50%, -50%);
+    cursor: auto;
   }
 
   /* Enhanced Glass Effects */
