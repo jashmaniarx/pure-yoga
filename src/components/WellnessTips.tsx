@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Leaf, Sun, Moon, Apple, Dumbbell, Brain, ArrowRight } from "lucide-react";
 
